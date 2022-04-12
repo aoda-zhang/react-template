@@ -11,9 +11,20 @@
     "plugin:react/jsx-runtime",
     "prettier"
   ],
+  "settings": {
+    "react": {
+        "pragma": "React",
+        "version": "detect"
+    }
+},
   "plugins": ["react-hooks"],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2019,
+    "sourceType": "module",
+    "ecmaFeatures":{
+        "jsx":true
+    }
   },
   "rules": {
     "react-hooks/rules-of-hooks": "error",

@@ -1,7 +1,7 @@
-/logs
-/server/mockData
-/node_modules
-/dist
-/package-lock.json
-.DS_Store
-fis-conf.js
+config/
+scripts/
+node_modules/
+\.eslintrc.js
+webpack.common.js
+webpack.dev.js
+webpack.prod.js

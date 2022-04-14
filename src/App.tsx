@@ -1,9 +1,4 @@
-import React from 'react';
-
-function App() {
-  return (
-   <>测试网络连接</>
-  );
+import React from 'react'
+export default function App() {
+  return <div>react项目demo</div>
 }
-
-export default App;

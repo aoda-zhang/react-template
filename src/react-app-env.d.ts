@@ -4,3 +4,4 @@ declare module "*.module.scss" {
   export default classes;
 }
 declare module "*.scss";
+declare module "*.less";

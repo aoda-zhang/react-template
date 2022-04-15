@@ -1,4 +1,10 @@
 import React from 'react'
-export default function App() {
-  return <div>react项目demo</div>
+import Demo from './components/Demo'
+const App = () => {
+  return (
+    <div>
+    <Demo></Demo>
+    </div>
+  )
 }
+export default App

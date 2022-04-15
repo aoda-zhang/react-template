@@ -20,5 +20,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "react-app-env.d.ts"]
+  "include": ["src","config", "react-app-env.d.ts",]
 }

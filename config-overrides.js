@@ -1,3 +1,4 @@
+// 项目webpack配置
 const {
   override,
   addWebpackAlias,
@@ -19,7 +20,9 @@ module.exports = override(
       rule.use.push({
         loader: require.resolve('sass-resources-loader'),
         options: {
-          resources: ['./src/assets/style/common.scss']
+          resources: [
+            './src/assets/style/theme.scss',
+          ]
         }
       })
     }

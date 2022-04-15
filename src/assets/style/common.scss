@@ -1,0 +1,14 @@
+// 常用样式集合
+// 水平垂直居中
+.centerAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 成功提示
+.successInfo {
+  background-color: $green3;
+  border-radius: 10px;
+  border: 1px solid $green8;
+}

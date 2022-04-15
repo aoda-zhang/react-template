@@ -1,4 +1,6 @@
-// 项目webpack配置
+/**
+ * webpack打包相关在此配置
+ */
 const {
   override,
   addWebpackAlias,
@@ -22,7 +24,8 @@ module.exports = override(
         options: {
           resources: [
             './src/assets/style/theme.scss',
-            // './src/assets/style/variable.scss'
+            './src/assets/style/common.scss',
+            './src/assets/style/variable.scss'
           ]
         }
       })

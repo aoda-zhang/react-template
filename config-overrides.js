@@ -22,6 +22,7 @@ module.exports = override(
         options: {
           resources: [
             './src/assets/style/theme.scss',
+            // './src/assets/style/variable.scss'
           ]
         }
       })

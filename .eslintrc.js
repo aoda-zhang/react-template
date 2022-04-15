@@ -7,24 +7,24 @@ module.exports = {
     'airbnb-typescript',
     'prettier'
   ],
-  plugins: ['react', '@typescript-eslint','react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks'],
   env: {
     browser: true,
-    node: true,
+    node: true
   },
   settings: {
     react: {
-      pragma: "React",
-      version: "detect",
-    },
+      pragma: 'React',
+      version: 'detect'
+    }
   },
   parserOptions: {
     ecmaVersion: 2019,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    project: ["tsconfig.json"]
+    project: ['tsconfig.json']
   },
 
   rules: {

@@ -23,9 +23,9 @@ module.exports = override(
         loader: require.resolve('sass-resources-loader'),
         options: {
           resources: [
-            './src/assets/style/theme.scss',
-            './src/assets/style/common.scss',
-            './src/assets/style/variable.scss'
+            './src/common/assets/style/theme.scss',
+            './src/common/assets/style/variable.scss',
+            './src/common/assets/style/common.scss'
           ]
         }
       })

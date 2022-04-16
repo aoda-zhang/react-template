@@ -11,10 +11,18 @@ const {
 const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const resolve = dir => path.join(__dirname, '.', dir)
+const rewireReactHotLoader = require('react-app-rewire-hot-loader')
 const isPrd = process.env.NODE_ENV === 'production'
 module.exports = override(
+  //按需加载antd
+  fixBabelImports('import', {
+    libraryName: 'antd',
+    libraryDirectory: 'es',
+    style: 'css'
+  }),
+  // 路径别名设置
   addWebpackAlias({
-    '@': resolve('src')
+    '@': resolve(__dirname, './src')
   }),
   // scss全局样式动态挂载
   adjustStyleLoaders(rule => {
@@ -46,9 +54,7 @@ module.exports = override(
       })
     ),
   (config, env) => {
-    config.resolve.alias = {
-      '@': path.resolve(__dirname, 'src')
-    }
+    config = rewireReactHotLoader(config, env)
     return config
   }
 )

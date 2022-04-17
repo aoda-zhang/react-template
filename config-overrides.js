@@ -7,7 +7,6 @@ const {
   adjustStyleLoaders,
   addWebpackPlugin
 } = require('customize-cra')
-
 const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const resolve = dir => path.join(__dirname, '.', dir)
@@ -15,11 +14,11 @@ const rewireReactHotLoader = require('react-app-rewire-hot-loader')
 const isPrd = process.env.NODE_ENV === 'production'
 module.exports = override(
   //按需加载antd
-  fixBabelImports('import', {
-    libraryName: 'antd',
-    libraryDirectory: 'es',
-    style: 'css'
-  }),
+  // fixBabelImports('import', {
+  //   libraryName: 'antd',
+  //   libraryDirectory: 'es',
+  //   style: 'css'
+  // }),
   // 路径别名设置
   addWebpackAlias({
     '@': resolve(__dirname, './src')

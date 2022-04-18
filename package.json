@@ -1,5 +1,5 @@
 {
-  "name": "shopify_campaign_app",
+  "name": "react-app",
   "version": "1.0.0",
   "main": "index.js",
   "private": true,
@@ -80,7 +80,6 @@
     "prettier": "^2.6.2",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.8",
-    "react-hot-loader": "^4.13.0",
     "stylelint": "^14.7.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-prettier": "^2.0.0",

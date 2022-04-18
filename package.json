@@ -44,9 +44,10 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": [
-      "prettier-eslint --write",
-      "eslint --fix",
+    "src/**/*.scss": "stylelint --syntax scss",
+    "src/**/.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.ts,.tsx",
+    "src/**/*.{js,jsx,tsx,ts,less,scss,md,json}": [
+      "prettier --write",
       "git add"
     ]
   },

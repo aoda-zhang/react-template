@@ -1,9 +1,8 @@
+/**项目commit格式校验 */
 const msgPath = process.env.HUSKY_GIT_PARAMS
-const msg = require('fs').readFileSync(msgPath, 'utf-8').trim()
-
-const commitRE =
-  /^(feat|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|release|workflow)(\(.+\))?: .{1,50}/
-
+const commitMsg = require('fs').readFileSync(msgPath, 'utf-8').trim()
+const commitREG =
+  /^(feat|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|release|workflow)/g
 // feat: 新功能、新特性
 // fix: 修改 bug
 // perf: 更改代码，以提高性能
@@ -16,13 +15,9 @@ const commitRE =
 // chore: 其他修改（不在上述类型中的修改）
 // release: 发布新版本
 // workflow: 工作流相关文件修改
-
-if (!commitRE.test(msg)) {
-  console.log()
+if (!commitREG.test(commitMsg)) {
   console.error(`
-        不合法的 commit 消息格式。
-        请查看 git commit 提交规范：https://github.com/woai3c/Front-end-articles/blob/master/git%20commit%20style.md
+        commit 消息格式错误，请到根目录script/verify-commit 下查看具体提交格式。
     `)
-
   process.exit(1)
 }

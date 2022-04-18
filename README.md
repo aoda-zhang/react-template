@@ -5,4 +5,10 @@
 
 当前已集成了webpack增量配置，scss变量抽离，eslint格式检测，项目结构等部分工程化工作！
 
+husk lint-statg 增量提交
+proxy代码
+不同环境变量设置
+webpack包大小分析
+stylelint
+
 

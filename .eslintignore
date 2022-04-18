@@ -1,4 +1,5 @@
-config-overrrides.js
-scripts/
+config-overrides.js
+script/
 node_modules/
 \.eslintrc.js
+

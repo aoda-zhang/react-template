@@ -18,12 +18,17 @@
     "react-scripts": "^4.0.3",
     "sass": "^1.41.0",
     "sass-resources-loader": "^2.2.5",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.2.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "cross-env  NODE_ENV=development react-app-rewired start ",
-    "build": " cross-env  NODE_ENV=production react-app-rewired build"
+    "build": "cross-env  NODE_ENV=production react-app-rewired build",
+    "lint": "lint-staged"
   },
   "browserslist": {
     "production": [
@@ -44,11 +49,14 @@
     }
   },
   "lint-staged": {
-    "src/**/*.scss": "stylelint --syntax scss",
-    "src/**/.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.ts,.tsx",
+    "src/**/*.scss": [
+      "stylelint --fix"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint src --ext .ts,.tsx,.js,.jsx --fix"
+    ],
     "src/**/*.{js,jsx,tsx,ts,less,scss,md,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --config .prettierrc --write"
     ]
   },
   "devDependencies": {
@@ -68,13 +76,13 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "8",
     "prettier": "^2.6.2",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.8",
     "react-hot-loader": "^4.13.0",
     "stylelint": "^14.7.1",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^25.0.0",
     "stylelint-prettier": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack-bundle-analyzer": "^4.5.0"

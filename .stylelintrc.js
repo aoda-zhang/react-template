@@ -1,12 +1,12 @@
 module.exports = {
-  extends: [
-    'stylelint-prettier/recommended',
-    'stylelint-config-standard-scss',
-    'stylelint-config-prettier-scss'
-  ],
-  plugins: ['stylelint-order'],
+  extends: ['stylelint-config-standard-scss', 'stylelint-config-rational-order'],
+  plugins: ['stylelint-scss'],
   rules: {
-    'prettier/prettier': true,
-    tabWidth: 2
+    indentation: 2,
+    'no-missing-end-of-source-newline': null,
+    'max-nesting-depth': 3,
+    'selector-max-compound-selectors': 3,
+    'at-rule-no-unknown': null,
+    'scss/at-rule-no-unknown': true
   }
 }

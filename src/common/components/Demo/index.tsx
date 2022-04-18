@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from './index.module.scss'
 
-const Demo: React.FC = () => {
+const Demo: React.FC<props> = () => {
   return (
     <div className={styles.box}>
       <span>前端工程化</span>

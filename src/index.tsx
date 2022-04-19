@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Demo from './common/components/Demo'
+import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Demo></Demo>
+    <App></App>
   </React.StrictMode>,
   document.getElementById('root')
 )

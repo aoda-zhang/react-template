@@ -50,12 +50,12 @@
   },
   "lint-staged": {
     "src/**/*.scss": [
-      "stylelint --fix"
+      "stylelint --fix  --custom-syntax postcss-scss"
     ],
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint src --ext .ts,.tsx,.js,.jsx --fix"
     ],
-    "src/**/*.{js,jsx,tsx,ts,less,scss,md,json}": [
+    "src/**/*.{js,jsx,tsx,ts,scss,md,json}": [
       "prettier --config .prettierrc --write"
     ]
   },
@@ -77,9 +77,11 @@
     "eslint-plugin-react": "^7.25.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "8",
+    "postcss-scss": "^4.0.3",
     "prettier": "^2.6.2",
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.1.8",
+    "react-hot-loader": "^4.13.0",
     "stylelint": "^14.7.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-prettier": "^2.0.0",

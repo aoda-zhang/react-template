@@ -1,0 +1,21 @@
+.explain {
+  box-sizing: border-box;
+  padding: $f20;
+  background-color: $steelBlue3;
+
+  .title {
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .subTitle {
+    font-weight: 700;
+    font-size: $f20;
+    list-style: trad-chinese-informal;
+  }
+
+  .text {
+    font-size: $f16;
+  }
+}

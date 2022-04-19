@@ -3,4 +3,4 @@ script/
 node_modules/
 \.eslintrc.js
 setupProxy.js
-
+.stylelintrc.js

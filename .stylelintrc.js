@@ -9,6 +9,7 @@ module.exports = {
     'selector-max-compound-selectors': 3,
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
+    // 拒绝文件命名使用kebab-case规则！！！！
     'selector-class-pattern': null,
     'string-quotes': 'single',
     'at-rule-empty-line-before': null,

@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './index.module.scss'
 
-const Explain: React.FC = () => {
+const Explain: React.FC<any> = () => {
   return (
     <div className={styles.explain}>
       <div className={styles.title}>react 前端工程化说明</div>

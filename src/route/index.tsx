@@ -1,7 +1,8 @@
 import React from 'react'
 import { RouteObject } from 'react-router-dom'
 import Guide from 'src/pages/Guide'
-import Explain from '../common/components/Explain'
+import Page1 from 'src/pages/Page1'
+import Explain from '../components/Explain'
 
 const routerList: RouteObject[] = [
   {
@@ -9,26 +10,18 @@ const routerList: RouteObject[] = [
     element: <Explain />
   },
   {
-    path: 'a',
+    path: '/guide',
     element: <Guide></Guide>,
     children: [
       {
-        path: '/a/a1',
-        element: <div>子组件展示1</div>
+        path: '/guide/page1',
+        element: <Page1></Page1>
       },
       {
-        path: '/a/a2',
+        path: '/guide/page2',
         element: <div>子组件展示2</div>
-      },
-      {
-        path: '/a/a3',
-        element: <div>子组件展示3</div>
       }
     ]
-  },
-  {
-    path: '/b',
-    element: <div>4444</div>
   }
 ]
 

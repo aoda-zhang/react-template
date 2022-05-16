@@ -1,10 +1,14 @@
-const proxy = require('http-proxy-middleware')
-// 匹配多个接口的代理
+const { createProxyMiddleware } = require('http-proxy-middleware')
+
+/**
+ * 1.可设置多个proxy代理
+ * 2.此文件一定要存在src目录下，不是根目录下，本人有血的教训！！！！！
+ *  */
 
 module.exports = function (app) {
   app.use(
     // 浏览器匹配api，代理到地址http://172.19.5.35:9536
-    proxy('/api', {
+    createProxyMiddleware('/api', {
       target: 'http://172.19.5.35:9536',
       secure: false,
       changeOrigin: true,
@@ -16,7 +20,7 @@ module.exports = function (app) {
   )
   app.use(
     // 浏览器匹配apc，代理到地址http://172.19.5.34:9531
-    proxy('/apc', {
+    createProxyMiddleware('/apc', {
       target: 'http://172.19.5.34:9531',
       secure: false,
       changeOrigin: true,

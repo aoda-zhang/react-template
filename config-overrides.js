@@ -22,7 +22,9 @@ module.exports = override(
   }),
   // 路径别名设置
   addWebpackAlias({
-    '@': resolve(__dirname, './src')
+    '@': resolve(__dirname, './src'),
+    '@apis': resolve(__dirname, './src/apis'),
+    '@components': resolve(__dirname, './src/components')
   }),
   // scss全局样式动态挂载
   adjustStyleLoaders(rule => {

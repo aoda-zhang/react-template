@@ -7,7 +7,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 
 module.exports = function (app) {
   app.use(
-    // 浏览器匹配api，代理到地址http://172.19.5.35:9536
+    // 浏览器匹配api，代理到地址后端项目地址http://172.19.5.35:9536
     createProxyMiddleware('/api', {
       target: 'http://172.19.5.35:9536',
       secure: false,

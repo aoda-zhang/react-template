@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "experimentalDecorators": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -18,5 +22,7 @@
     "jsx": "react-jsx",
     "baseUrl": "./"
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

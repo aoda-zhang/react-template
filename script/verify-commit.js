@@ -1,8 +1,7 @@
 /**项目commit格式校验 */
 const msgPath = process.env.HUSKY_GIT_PARAMS
 const commitMsg = require('fs').readFileSync(msgPath, 'utf-8').trim()
-const commitREG =
-  /^(feat|fix|docs|style|refactor|perf|test|workflow|build|ci|chore|release|workflow)(\(.+\))?: .{1,50}/
+const commitREG = /^(feat|fix|docs|style|refactor|perf|test|workflow)(\(.+\))?:.{1,50}/
 // feat: 新功能、新特性
 // fix: 修改 bug
 // perf: 更改代码，以提高性能
@@ -16,7 +15,6 @@ const commitREG =
 // release: 发布新版本
 // workflow: 工作流相关文件修改
 if (!commitREG.test(commitMsg)) {
-  console.log()
   console.error(`
         commit 消息格式错误，请到根目录script/verify-commit 下查看具体提交格式。
     `)

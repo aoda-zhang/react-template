@@ -10,7 +10,7 @@ const routerList: RouteObject[] = [
     element: <Explain />
   },
   {
-    path: '/guide',
+    path: 'guide',
     element: <Guide></Guide>,
     children: [
       {

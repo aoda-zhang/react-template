@@ -1,7 +1,8 @@
-config-overrides.js
 script/
 node_modules/
-\.eslintrc.js
+.eslintrc.json
 setupProxy.js
 .stylelintrc.js
 config/
+src/shared/lib/*
+craco.config.js

@@ -11,11 +11,8 @@ module.exports = function (app) {
     createProxyMiddleware('/api', {
       target: 'http://172.19.5.35:9536',
       secure: false,
-      changeOrigin: true,
+      changeOrigin: true
       // 根据具体后端项目，无api字段可直接配置为/，有api字段可不用这行处理
-      pathRewrite: {
-        '^/api': '/'
-      }
     })
   )
   app.use(

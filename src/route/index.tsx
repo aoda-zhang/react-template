@@ -1,27 +1,29 @@
+import Welcome from '@/pages/Welcome'
 import React from 'react'
 import { RouteObject } from 'react-router-dom'
-import Guide from 'src/pages/Guide'
-import Page1 from 'src/pages/Page1'
-import Explain from '../components/Explain'
+import BusinessMap from 'src/pages/BuissnessMap'
+import PreviewMap from 'src/pages/PreviewMap'
 
 const routerList: RouteObject[] = [
   {
     path: '/',
-    element: <Explain />
+    element: <Welcome />
   },
   {
-    path: 'guide',
-    element: <Guide></Guide>,
-    children: [
-      {
-        path: '/guide/page1',
-        element: <Page1></Page1>
-      },
-      {
-        path: '/guide/page2',
-        element: <div>子组件展示2</div>
-      }
-    ]
+    path: '/welcome',
+    element: <Welcome />
+  },
+  {
+    path: '/businessMap',
+    element: <BusinessMap />
+  },
+  {
+    path: '/previewMap',
+    element: <PreviewMap />
+  },
+  {
+    path: '*',
+    element: <Welcome />
   }
 ]
 

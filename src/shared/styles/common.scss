@@ -3,6 +3,10 @@
   align-items: center;
   justify-content: center;
 }
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
 
 .success_info {
   background-color: $green3;

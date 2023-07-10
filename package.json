@@ -3,33 +3,43 @@
   "version": "1.0.0",
   "main": "index.js",
   "private": true,
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@types/node": "^16.11.6",
-    "@types/react": "^17.0.0",
+    "@types/react": "^18.2.14",
     "@types/react-dom": "^17.0.0",
+    "antd": "^5.6.4",
     "axios": "^0.26.1",
     "classnames": "^2.3.1",
+    "craco-sass-resources-loader": "^1.1.0",
+    "crypto-js": "^4.1.1",
     "http-proxy-middleware": "^2.0.4",
     "husky": "^4.0.0",
+    "install": "^0.13.0",
     "lint-staged": "^12.3.8",
+    "mobx": "^6.9.0",
+    "mobx-react": "^7.6.0",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-mobx": "^0.0.4",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.1",
     "sass": "^1.41.0",
     "sass-resources-loader": "^2.2.5",
-    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.2.0",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "typescript": "^4.1.2"
   },
   "scripts": {
-    "start": "cross-env  NODE_ENV=development react-app-rewired start ",
-    "build": "cross-env  NODE_ENV=production react-app-rewired build",
+    "dev": "cross-env  NODE_ENV=develop craco start ",
+    "build": "cross-env  NODE_ENV=production craco build",
     "lint": "lint-staged"
   },
   "browserslist": {
@@ -46,14 +56,10 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "node script/verify-commit.js"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "src/**/*.scss": [
-      "stylelint --fix  --custom-syntax postcss-scss"
-    ],
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint src --ext .ts,.tsx,.js,.jsx --fix"
     ],
@@ -63,6 +69,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-decorators": "^7.15.4",
+    "@craco/craco": "^7.1.0",
     "@types/ramda": "^0.27.44",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
@@ -77,17 +84,11 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.2",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "8",
     "postcss-scss": "^4.0.3",
     "prettier": "^2.6.2",
     "react-app-rewire-hot-loader": "^2.0.1",
-    "react-app-rewired": "^2.1.8",
-    "react-hot-loader": "^4.13.0",
-    "stylelint": "^14.7.1",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-prettier": "^2.0.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack-bundle-analyzer": "^4.5.0"
+    "react-hot-loader": "^4.13.0"
   }
 }

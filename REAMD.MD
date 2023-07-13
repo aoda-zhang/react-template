@@ -167,3 +167,48 @@ module.exports = function (app) {
 
 ## 响应式配置及开发
 
+```ts
+// responsive.scss    scss响应式方法封装
+// media size
+$s: 375px; // mobile
+$m: 768px; // ipad
+$l: 1024px; // desktop
+$xl: 1280px; // web
+
+// responsive function
+
+@mixin responsive($width-list) {
+  @each $width in $width-list {
+    @if $width==$s {
+      // 320-767 mobile
+      @media only screen and (max-width: ($m - 1px)) {
+        @content;
+      }
+    } @else if $width==$m {
+      // 768-1023 ipad
+      @media only screen and (min-width: $m) and (max-width: ($l - 1px)) {
+        @content;
+      }
+    } @else if $width==$l {
+      // 1024-1279 desktop
+      @media only screen and (min-width: $l) and (max-width: ($xl - 1px)) {
+        @content;
+      }
+    } @else {
+      // 1280 pc
+      @media only screen and (min-width: $xl) {
+        @content;
+      }
+    }
+  }
+}
+
+// 使用方法
+// mobile和ipad padding为4px
+@include responsive(($s,$m)){
+  padding:4px
+}
+```
+
+
+

@@ -88,23 +88,29 @@ module.exports = {
 
 ```ts
 // route.js
-import Welcome from '@/pages/Welcome'
 import React from 'react'
 import { RouteObject } from 'react-router-dom'
-
-// 路由配置
+import Loadable from 'react-loadable'
+// 懒加载效果组件
+const LoadingTip = () => <div>加载路由ing...</div>
+const loadLazyComponent = lazyComponent => {
+  return Loadable({
+    loader: lazyComponent,
+    loading: LoadingTip
+  })
+}
 const routerList: RouteObject[] = [
   {
     path: '/',
-    element: <Welcome />
+    element: loadLazyComponent(() => import('@/pages/Welcome'))
   },
   {
     path: '/welcome',
-    element: <Welcome />
+    element: loadLazyComponent(() => import('@/pages/Welcome'))
   },
   {
     path: '*',
-    element: <Welcome />
+    element: loadLazyComponent(() => import('@/pages/Welcome'))
   }
 ]
 
@@ -212,3 +218,53 @@ $xl: 1280px; // web
 
 
 
+## 前端状态应用
+> 当前端多个页面需要使用同一份数据，而多个页面之间层次嵌套很深，或者页面之间不存在强关联时，往往会使用redux或者mobx做临时的数据状态管理，这里以mobx为例
+
+```ts
+// store实例创建和方法定义
+import { makeAutoObservable } from 'mobx'
+class FareStore {
+  // 状态
+  faredData = []
+  formData = []
+  faredDate: string[] = []
+  repeatAddress: string[] = []
+  constructor() {
+    // mobx自动检测，状态，action和computed，绑定到实例上
+    makeAutoObservable(this)
+  }
+  setForm = (data = []) => {
+    this.faredData = [...this.faredData, ...data]
+    this.formData = [...data]
+  }
+  // computed，mobx会将get为修饰符的方法定义为计算属性
+  get getFaredAddress() {
+    return this.faredData?.map(item => item?.to) ?? []
+  }
+  // action
+  setDate = (date: string) => {
+    this.faredDate = [...this.faredDate, date]
+  }
+}
+const fareStore = new FareStore()
+export default fareStore
+
+
+// mobx状态使用
+// demo.js
+import fareStore from '../store'
+const { faredDate, getFaredAddress, getRepeatAddress } = fareStore
+function Demo(){
+  return (
+    <div>
+          {getFaredAddress?.map((item, i) => (
+            <span key={i} className={styles.val}>
+              {item}
+            </span>
+          ))}
+    </div>
+  )
+}
+
+```

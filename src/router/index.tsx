@@ -1,19 +1,32 @@
-import Welcome from '@/pages/Welcome'
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
+const Welcome_lazy = lazy(() => import('@/pages/Welcome'))
 import { RouteObject } from 'react-router-dom'
 
 const routerList: RouteObject[] = [
   {
     path: '/',
-    element: <Welcome />
+    element: (
+      // 使用Suspense包裹，使用lazy导入，react路由懒加载方式
+      <Suspense fallback={<div>loading</div>}>
+        <Welcome_lazy />
+      </Suspense>
+    )
   },
   {
     path: '/welcome',
-    element: <Welcome />
+    element: (
+      <Suspense fallback={<div>loading</div>}>
+        <Welcome_lazy />
+      </Suspense>
+    )
   },
   {
     path: '*',
-    element: <Welcome />
+    element: (
+      <Suspense fallback={<div>loading</div>}>
+        <Welcome_lazy />
+      </Suspense>
+    )
   }
 ]
 

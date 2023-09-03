@@ -1,32 +1,26 @@
-import React, { Suspense, lazy } from 'react'
-const Welcome_lazy = lazy(() => import('@/pages/Welcome'))
+import React from 'react'
 import { RouteObject } from 'react-router-dom'
-
+import Loadable from 'react-loadable'
+// 懒加载效果组件
+const LoadingTip = () => <div>加载路由ing...</div>
+const loadLazyComponent = lazyComponent => {
+  return Loadable({
+    loader: lazyComponent,
+    loading: LoadingTip
+  })
+}
 const routerList: RouteObject[] = [
   {
     path: '/',
-    element: (
-      // 使用Suspense包裹，使用lazy导入，react路由懒加载方式
-      <Suspense fallback={<div>loading</div>}>
-        <Welcome_lazy />
-      </Suspense>
-    )
+    element: loadLazyComponent(() => import('@/pages/Welcome'))
   },
   {
     path: '/welcome',
-    element: (
-      <Suspense fallback={<div>loading</div>}>
-        <Welcome_lazy />
-      </Suspense>
-    )
+    element: loadLazyComponent(() => import('@/pages/Welcome'))
   },
   {
     path: '*',
-    element: (
-      <Suspense fallback={<div>loading</div>}>
-        <Welcome_lazy />
-      </Suspense>
-    )
+    element: loadLazyComponent(() => import('@/pages/Welcome'))
   }
 ]
 

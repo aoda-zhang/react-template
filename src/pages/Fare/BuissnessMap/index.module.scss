@@ -1,0 +1,24 @@
+.form {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 0.77rem;
+
+  :global(.ant-row) {
+    display: block;
+  }
+
+  :global(.ant-btn-primary) {
+    margin: 2.31rem 0;
+  }
+
+  :global(.ant-select-selector) {
+    width: 48vw;
+    height: 32px;
+  }
+
+  :global(.ant-space-align-baseline) {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

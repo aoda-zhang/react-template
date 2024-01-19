@@ -1,27 +1,40 @@
-import React from 'react'
-import { RouteObject } from 'react-router-dom'
-import Loadable from 'react-loadable'
-// 懒加载效果组件
-const LoadingTip = () => <div>加载路由ing...</div>
-const loadLazyComponent = lazyComponent => {
-  return Loadable({
-    loader: lazyComponent,
-    loading: LoadingTip
-  })
-}
+import React from "react";
+import { RouteObject } from "react-router-dom";
+import Fare from "@/pages/Fare";
+import Login from "@/pages/Auth/Login";
+import Register from "@/pages/Auth/Register";
+import History from "@/pages/History";
+import Home from "@/pages/Home";
+
 const routerList: RouteObject[] = [
   {
-    path: '/',
-    element: loadLazyComponent(() => import('@/pages/Welcome'))
+    path: "/",
+    element: <Home />,
   },
   {
-    path: '/welcome',
-    element: loadLazyComponent(() => import('@/pages/Welcome'))
+    path: "home",
+    element: <Home />,
   },
   {
-    path: '*',
-    element: loadLazyComponent(() => import('@/pages/Welcome'))
-  }
-]
+    path: "fare",
+    element: <Fare />,
+  },
+  {
+    path: "login",
+    element: <Login />,
+  },
+  {
+    path: "register",
+    element: <Register />,
+  },
+  {
+    path: "history",
+    element: <History />,
+  },
+  {
+    path: "*",
+    element: <Home />,
+  },
+];
 
-export default routerList
+export default routerList;

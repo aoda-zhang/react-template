@@ -117,4 +117,8 @@ dist
 .pnp.*
 
 .env
-node_modules
+# mac icon
+.DS_Store
+
+src/setupProxy.js
+tsconfig.tsbuildinfo

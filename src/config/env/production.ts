@@ -1,11 +1,9 @@
-module.exports = {
-  baseURL: process.env.REACT_APP_BASEURL,
-  commonErrorMessage: '出错了，快去找齐琪哥修bug！！！！',
-  welcomeMessage: 'Welcome to our reimbursement system',
-  auth: {
-    inputAuthCode: 'Please enter the authorization code',
-    authCode: process.env.REACT_APP_AUTHCODE,
-    noAuthMessage: '个人网站，请勿滥用，输入正确的授权码可进入'
-  },
-  colorPrimary: '#1c7d29'
-}
+const environment = import.meta.env;
+const productionEnv = {
+  baseURL: environment?.REACT_APP_BASEURL,
+  commonErrorMessage: "出错了，请稍后重试！！！！",
+  welcomeMessage: "Welcome to our reimbursement system",
+  colorPrimary: "#1c7d29",
+  oilPrice: environment?.REACT_APP_OIL_PRICE,
+};
+export default productionEnv;

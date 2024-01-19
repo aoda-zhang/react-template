@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "esnext",
+    "module": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "experimentalDecorators": true,
     "allowJs": true,
@@ -10,18 +11,19 @@
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": false,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "composite": true,
+    "types": ["node", "vite/client"]
   },
-  "include": ["src/**/*", "config"],
+  "include": ["src"],
   "exclude": ["node_modules", "src/**/*.spec.ts"],
-  "extends": "./paths.json"
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

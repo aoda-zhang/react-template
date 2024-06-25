@@ -1,8 +1,9 @@
 script/
 node_modules/
-.eslintrc.json
 setupProxy.js
 .stylelintrc.js
 config/
-src/shared/lib/*
+src/route/*
+src/shared/i18n/*
+src/shared/libs/*
 craco.config.js

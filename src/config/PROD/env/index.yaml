@@ -1,0 +1,18 @@
+http:
+  baseURL: your url
+  prefix: 
+  auth:
+    privateKey: 
+systemSettings:
+  colorPrimary: 
+  commonErrorMessage: 
+map:
+  oilPrice: 
+  aveOild: 
+  maxAveSpeed: 
+  minAveSpeed: 
+  minSpeed: 
+  maxSpeed: 
+  no_map_message: 
+queryOptions:
+  refetchOnReconnect: true
